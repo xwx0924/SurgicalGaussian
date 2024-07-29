@@ -117,7 +117,7 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations):
         # deformation loss
         loss_pos, loss_cov = def_reg_loss(scene.gaussians, d_xyz, d_rotation, d_scaling)
 
-        loss += loss_pos
+        loss += opt.lambda_pos * loss_pos
         loss += opt.lambda_cov * loss_cov
 
         loss.backward()
@@ -131,7 +131,7 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations):
             # Progress bar
             ema_loss_for_log = 0.4 * loss.item() + 0.6 * ema_loss_for_log
             if iteration % 10 == 0:
-                progress_bar.set_postfix({"Loss": f"{ema_loss_for_log:.{7}f}", "loss_pos": f"{loss_pos:.{7}f}", "loss_cov": f"{loss_cov:.{7}f}"})
+                progress_bar.set_postfix({"Loss": f"{ema_loss_for_log:.{7}f}"})
                 progress_bar.update(10)
             if iteration == opt.iterations:
                 progress_bar.close()
