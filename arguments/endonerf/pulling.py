@@ -11,4 +11,6 @@ ModelParams = dict(
 
 OptimizationParams = dict(
     iterations=40_000,
+    lambda_cov=200,
+    lambda_pos=1,
 )
