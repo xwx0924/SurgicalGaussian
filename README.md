@@ -4,8 +4,9 @@
 
 
 -------------------------------------------
+![introduction](assets/method.png)
 
-## Environmental Setups
+## Environment
 Please follow the [3D-GS](https://github.com/graphdeco-inria/gaussian-splatting) and [4DGS](https://github.com/hustvl/4DGaussians) to install the relative packages.
 ```bash
 git clone https://github.com/xwx0924/SurgicalGaussian.git
