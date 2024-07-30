@@ -312,8 +312,8 @@ if __name__ == "__main__":
     parser.add_argument('--detect_anomaly', action='store_true', default=False)
     parser.add_argument("--test_iterations", nargs="+", type=int,
                         default=[3000, 5000, 6000, 7_000] + list(range(10000, 60001, 1000)))
-    parser.add_argument("--save_iterations", nargs="+", type=int, default=[5_000, 10_000, 20_000, 30_000, 40000, 50000, 60000])
-    # default=[1_000, 3_000, 4_000, 5_000, 7_000, 10_000, 20_000, 30_000, 40000, 50000, 60000]
+    parser.add_argument("--save_iterations", nargs="+", type=int, default=[20_000, 40000, 60000])
+    
     parser.add_argument("--quiet", action="store_true")
     parser.add_argument("--config", type=str, default="")
     args = parser.parse_args(sys.argv[1:])
