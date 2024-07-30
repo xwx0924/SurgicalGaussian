@@ -10,6 +10,7 @@ ModelParams = dict(
 )
 OptimizationParams = dict(
     iterations=40_000,
+    densify_grad_threshold=0.0003, 
     lambda_cov=40,
     lambda_pos=0.2,
 )
